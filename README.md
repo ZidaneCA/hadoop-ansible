@@ -2,7 +2,7 @@ This project is copied from [here](https://github.com/pippozq/hadoop-ansible) wi
 - Download files to remote server directly
 - Install spark via ansible
 - Fixes to some identified issues in installation process
-- Deploys all components to HADOOP_HOME=/home/hadoop/current to ensure ease of updates when later hadoop versions are released
+- Deploys all components to `HADOOP_HOME=/home/hadoop/current` to ensure ease of updates when later hadoop versions are released
 
 # Hadoop-ansible
 - Install Hadoop cluster with ansible
@@ -17,7 +17,7 @@ Use DNS Server or update /etc/hosts for all servers
 
 ## Install Hadoop
 1. Get URL and version of desired hadoop version
-2. Update the {{ download_path }} and {{ hadoop_url }} in vars/var_basic.yml to desired path on remote server and url of hadoop tar.gz
+2. Update the `{{ download_path }}` and `{{ hadoop_url }}` in `vars/var_basic.yml` to desired path on remote server and url of hadoop tar.gz
 
 ```
 hadoop_url: "https://dlcdn.apache.org/hadoop/common/hadoop-{{ hadoop_version }}/hadoop-{{ hadoop_version }}.tar.gz"
@@ -458,21 +458,24 @@ ansible-playbook -i hosts/host spark.yml
 
 ## NOTES
 1. All PATH variables are kept in `/etc/environment` and sourced to ensure they are usable via ansible user.
-2. args:
-   executable: /bin/bash
+2. 
+  ```
+  args:
+     executable: /bin/bash
+  ```
    is added to ensure ansible shell commands run. May produce errors otherwise
 
 3. Java Needs to be preinstalled for non-redhat systems
 4. If everything runs normally, you can use following commands to start hadoop
-   - hdfs namenode -format  #format hadoop namenode
-   - start-dfs.sh
-   - start-yarn.sh
-   - mapred --daemon start historyserver
+   - `hdfs namenode -format  #format hadoop namenode`
+   - `start-dfs.sh`
+   - `start-yarn.sh`
+   - `mapred --daemon start historyserver`
 
   To stop, use
-   - stop-dfs.sh
-   - stop-yarn.sh
-   - mapred --daemon stop historyserver
+   - `stop-dfs.sh`
+   - `stop-yarn.sh`
+   - `mapred --daemon stop historyserver`
 
 5. Remote user isn't root so there is need for the `become: true` and also some configs in hosts/host file
 
