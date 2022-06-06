@@ -468,7 +468,8 @@ ansible-playbook -i hosts/host spark.yml
    - start-dfs.sh
    - start-yarn.sh
    - mapred --daemon start historyserver
-     To stop, use
+
+  To stop, use
    - stop-dfs.sh
    - stop-yarn.sh
    - mapred --daemon stop historyserver
