@@ -1,4 +1,4 @@
-This project is forked from [here](https://github.com/pippozq/hadoop-ansible) with following upgrades
+This project is copied from [here](https://github.com/pippozq/hadoop-ansible) with following major upgrades
 - Download files to remote server directly
 - Install spark via ansible
 - Fixes to some identified issues in installation process
