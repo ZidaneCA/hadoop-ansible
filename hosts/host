@@ -1,0 +1,12 @@
+[master]
+192.168.122.79 ansible_user=jon_doe ansible_connection=ssh ansible_ssh_pass=pass ansible_sudo_pass=pass
+
+[workers]
+192.168.122.149 ansible_user=jon_doe ansible_connection=ssh ansible_ssh_pass=pass ansible_sudo_pass=pass
+192.168.122.127 ansible_user=jon_doe ansible_connection=ssh ansible_ssh_pass=pass  ansible_sudo_pass=pass
+
+[hive]
+192.168.122.79 ansible_user=jon_doe ansible_connection=ssh ansible_ssh_pass=pass ansible_sudo_pass=pass
+
+[spark]
+192.168.122.79 ansible_user=jon_doe ansible_connection=ssh ansible_ssh_pass=pass ansible_sudo_pass=pass
